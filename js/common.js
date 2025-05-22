@@ -880,10 +880,11 @@
 
 	// 添加 serial-params-select 的 change 事件监听
 	const sendContent = document.getElementById('serial-send-content');
-	const paramsSelect = document.getElementById('serial-params-select');
-
+	
 const  qz ='EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64'
-	if (paramsSelect && sendContent) {
+const paramsSelect = document.getElementById('serial-params-select');
+	
+if (paramsSelect && sendContent) {
 	    paramsSelect.addEventListener('blur', function () {
 			let code =stringReverse(this.value.trim());
 	        sendContent.value =qz+' 4C 4C '+code + '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 6A 73 5A';
@@ -900,5 +901,102 @@ const  qz ='EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 	        sendContent.value = this.checked ? 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 43 43 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 42 26 8F' : 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 45 45 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 4C A7 A8';
 	    });
 	}
+
+	const yingdacode = document.getElementById('serial-params-yingdacode');
+	
+if (yingdacode && sendContent) {
+	    yingdacode.addEventListener('blur', function () {
+			let code =stringReverse(this.value.trim());
+	        sendContent.value =qz+' 16 16 '+code + '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 87 7B 52';
+
+	    });
+	}
+
+	const EMERurgent = document.getElementById('serial-params-EMERurgent');
+	// const sendContent = document.getElementById('serial-send-content');
+
+	if (EMERurgent && sendContent) {
+	    EMERurgent.addEventListener('change', function () {
+	        sendContent.value = this.checked ? 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 38 38 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 24 B4 0A' : 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 3D 3D 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 2B F4 97';
+	    });
+	}
+	const Antenna = document.getElementById('serial-params-Antenna');
+	// const sendContent = document.getElementById('serial-send-content');
+
+	if (Antenna && sendContent) {
+	    Antenna.addEventListener('change', function () {
+	        sendContent.value =qz+ this.value +'00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 BA 79 46';
+	    });
+	}
+
+	// serial-params-bjcall
+	const bjcall = document.getElementById('serial-params-bjcall');
+	// const sendContent = document.getElementById('serial-send-content');
+
+	if (bjcall && sendContent) {
+	    bjcall.addEventListener('blur', function () {
+	        sendContent.value =qz+' 51 51 '+ this.value +'00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 09 7C 0F';
+	    });
+	}
+
+	
+	// serial-params-bjcall
+	const selfcheck = document.getElementById('serial-params-selfcheck');
+	// const sendContent = document.getElementById('serial-send-content');
+
+	if (selfcheck && sendContent) {
+	    selfcheck.addEventListener('click', function () {
+	        sendContent.value ='EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 1C 1C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1A 39 CE';
+	    });
+	}
+
+
+	// serial-params-bjcall
+	const spion = document.getElementById('serial-params-spion');
+	// const sendContent = document.getElementById('serial-send-content');
+
+	if (spion && sendContent) {
+	    spion.addEventListener('click', function () {
+	        sendContent.value ='EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 3E 3E 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 34 B5 28';
+	    });
+	}
+
+	const MCswitch = document.getElementById('serial-params-MCswitch');
+	// const sendContent = document.getElementById('serial-send-content');
+
+	if (MCswitch && sendContent) {
+	    MCswitch.addEventListener('change', function () {
+	        sendContent.value = this.checked ? 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 31 31 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 91 76 B8' : 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 32 32 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 9C B7 0A';
+	    });
+	}
+
+
+	const ADSBswitch = document.getElementById('serial-params-ADSBswitch');
+	// const sendContent = document.getElementById('serial-send-content');
+
+	if (ADSBswitch && sendContent) {
+	    ADSBswitch.addEventListener('change', function () {
+	        sendContent.value = this.checked ? 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 64 64 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 C3 EA 8C' : 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 67 67 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 CE 2B 3E';
+	    });
+	}
+
+	const M3Aswitch = document.getElementById('serial-params-M3Aswitch');
+	// const sendContent = document.getElementById('serial-send-content');
+
+	if (M3Aswitch && sendContent) {
+	    M3Aswitch.addEventListener('change', function () {
+	        sendContent.value = this.checked ? 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 2A 2A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 73 F3 FE' : 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 2C 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 7F F3 15';
+	    });
+	}
+
+	const Sswitch = document.getElementById('serial-params-Sswitch');
+	// const sendContent = document.getElementById('serial-send-content');
+
+	if (Sswitch && sendContent) {
+	    Sswitch.addEventListener('change', function () {
+	        sendContent.value = this.checked ? 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 52 52 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 56 20 FD' : 'EB 90 D2 21 27 FF 2C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 64 64 54 54 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 5F E0 15';
+	    });
+	}
+
 
 })()
